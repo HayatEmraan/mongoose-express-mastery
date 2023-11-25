@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-const OrdersJoi = Joi.object({
+export const OrdersJoi = Joi.object({
   productName: Joi.string().required(),
   price: Joi.number().required(),
   quantity: Joi.number().required(),

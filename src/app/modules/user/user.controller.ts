@@ -99,6 +99,7 @@ export const updateUser = async (req: Request, res: Response) => {
       new: true,
       projection: {
         password: 0,
+        orders: 0,
       },
     })
     return res.status(200).send({

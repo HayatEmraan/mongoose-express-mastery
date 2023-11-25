@@ -56,7 +56,12 @@ export const getSingleUser = async (req: Request, res: Response) => {
     if (!existUser) {
       throw new Error('User not found!')
     }
-    const result = await UserModel.findOne({ userId })
+    const result = await UserModel.findOne(
+      { userId },
+      {
+        password: 0,
+      },
+    )
     return res.status(200).send({
       success: true,
       message: 'User fetched successfully!',

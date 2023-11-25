@@ -22,7 +22,8 @@
     "no-self-assign": "error",
     "no-use-before-define": "error",
     "no-var": "error",
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "@typescript-eslint/no-explicit-any": "warn"
   },
   "globals": {
     "process": true

@@ -97,6 +97,9 @@ export const updateUser = async (req: Request, res: Response) => {
     }
     const result = await UserModel.findOneAndUpdate({ userId }, value, {
       new: true,
+      projection: {
+        password: 0,
+      },
     })
     return res.status(200).send({
       success: true,

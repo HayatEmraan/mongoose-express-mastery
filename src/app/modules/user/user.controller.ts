@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { UserJoiValidation } from './user.validate'
+import { UserJoiValidation, updateUserJoiValidation } from './user.validate'
 import { UserModel } from './user.model'
 import { SUserCreate } from './user.service'
 
@@ -78,7 +78,7 @@ export const updateUser = async (req: Request, res: Response) => {
   try {
     const { userId } = await req.params
     const user = await req.body
-    const { value, error } = await UserJoiValidation.validate(user)
+    const { value, error } = await updateUserJoiValidation.validate(user)
     if (error) {
       return res.status(400).send({
         success: false,

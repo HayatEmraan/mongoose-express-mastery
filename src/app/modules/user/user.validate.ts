@@ -25,3 +25,22 @@ export const UserJoiValidation = Joi.object({
   }).required(),
   orders: Joi.array().items(OrdersJoi).default([]),
 })
+
+export const updateUserJoiValidation = Joi.object({
+  userId: Joi.number(),
+  username: Joi.string(),
+  password: Joi.string(),
+  fullName: Joi.object({
+    firstName: Joi.string(),
+    lastName: Joi.string(),
+  }),
+  age: Joi.number(),
+  email: Joi.string().email(),
+  isActive: Joi.boolean().default(true),
+  hobbies: Joi.array().default([]),
+  address: Joi.object({
+    street: Joi.string(),
+    city: Joi.string(),
+    country: Joi.string(),
+  }),
+})
